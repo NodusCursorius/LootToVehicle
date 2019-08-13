@@ -1,19 +1,24 @@
 # LootToVehicle
 Loot to Vehicle for ACE and Antistasi
 
+Original by **Bear** - https://steamcommunity.com/sharedfiles/filedetails/?id=1439779114
 
-Add files from mission_folder to your mission folder
+Additional features added by **Ghosto27** - https://github.com/Ghosto27/LootToVehicle
+```
+• add looting action to white surrender crates 
+• distance to vehicle increased from 15m to 20m
+```
+Personal changes
 
-If description.ext already exist "class CfgFunctions" add content into it.
+`functions\fn_transferToVehicle.sqf`
 
+* changed `Box_T_East_Wps_F` to `Box_IND_Wps_F` based on Antistasi 1.4's `AI\surrenderAction.sqf`
 
-- distance to vehicle increased from 15 to 20 m
+`XEH_postInit.sqf`
 
-- if you woun't box removing after transfer, comment lines 61-64 in file "functions/fn_transferToVehicle.sqf"
+* removed branding `1Tac Antistasi ` from action messages
 
-    //delete box
-    /*
-    if (typeOf _target == "Box_T_East_Wps_F") then {
-        deleteVehicle _target;
-    }; 
-    */
+* restructured Ghosto27's folder for easier PBO compiling
+  - renamed directory `missions` to `bear_antistasi_looter` for consistency
+  - removed `description.ext`
+* no longer requires the original Loot to Vehicle by Bear
